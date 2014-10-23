@@ -18,9 +18,11 @@ class EventsController < ApplicationController
     # @event = Event.new( :name => params[:event][:name])
     @event.save
     if @event.save
+      flash[:notice] = "event was successfully updated"
       redirect_to :action => :index
     else
       render :action => :new
+    end
   end
 
   # GET
@@ -37,16 +39,17 @@ class EventsController < ApplicationController
   # GET
   def update
     if @event.update_attributes(event_params)
-      redirect_to :action => :index
+      redirect_to :action => :show, :id => @event
     else
       render :action => :new
-    redirect_to :action => :show, :id => @event
+    
+    end
   end
 
   #
   def destroy
     @event.destroy
-
+    flash[:alert] = "event was successfully deleted"
     redirect_to :action => :index
   end
 
