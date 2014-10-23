@@ -24,6 +24,8 @@ class EventsController < ApplicationController
   # GET
   def show
     @event = Event.find(params[:id])
+
+    @page_title = @event.name
   end
 
   # GET
