@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
-  #   end
+  #   end 
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
@@ -57,4 +57,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
 end
